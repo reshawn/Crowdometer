@@ -22,16 +22,16 @@ angular.module('app.routes', [])
     controller: 'locationsCtrl'
   })
 
-  .state('foodCourt', {
+  .state('kyleClass', {
     url: '/page4',
-    templateUrl: 'templates/foodCourt.html',
-    controller: 'foodCourtCtrl'
+    templateUrl: 'templates/kyleClass.html',
+    controller: 'kyleClassCtrl'
   })
 
-  .state('jFKBusStop', {
+  .state('history', {
     url: '/page5',
-    templateUrl: 'templates/jFKBusStop.html',
-    controller: 'jFKBusStopCtrl'
+    templateUrl: 'templates/history.html',
+    controller: 'historyCtrl'
   })
 
 $urlRouterProvider.otherwise('/page1')

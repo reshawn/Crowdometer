@@ -1,0 +1,53 @@
+<ion-view title="History" id="page5">
+  <ion-content padding="true" class="has-header">
+
+    <form id="history-form2" class="list">
+
+      <label class="item item-select" id="page-select1">
+        <span class="input-label">Choose Year</span>
+        <select id='year'>
+          <option>2016</option>
+        </select>
+      </label>
+
+      <label class="item item-select" id="page-select2">
+        <span class="input-label">Choose Month</span>
+        <select id="month">
+          <option ng-selected="{{months[9]==x}}" ng-repeat="x in months">{{x}}</option>
+        </select>
+      </label>
+
+      <label class="item item-select" id="page-select2">
+        <span class="input-label">Choose Day</span>
+        <select id="day">
+          <option ng-selected="{{28==x}}" ng-repeat="x in days">{{x}}</option>
+        </select>
+      </label>
+
+      <div class="item row">
+        <div class="col">
+          <label class="item item-select" id="page-select2">
+            <span class="input-label">Time Frame</span>
+            <select id="frame">
+              <option ng-selected="{{times[16]==x}}" ng-repeat="x in times">{{x.from}} to {{x.to}}</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="col">
+          <label class="item item-select" id="page-select2">
+            <span class="input-label">Time Period</span>
+            <select id="period">
+              <option>AM</option>
+              <option>PM</option>
+            </select>
+          </label>
+        </div>
+
+        </div>
+      </div>
+    </form>
+
+    <button id="loadHistory" class="button button-positive  button-block" on-touch="modal.show();loadHistory()" >Load History</button>
+  </ion-content>
+</ion-view>

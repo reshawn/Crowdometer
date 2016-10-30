@@ -26,6 +26,7 @@
 
 ## Mobile App Functions
 - View latest density information
+- View past density information
 
 ## Server Setup Instructions
 - pip install -r Requirements.txt
