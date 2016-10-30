@@ -161,6 +161,8 @@ function ($scope, $stateParams, $ionicModal) {
 		while (res.firstChild) {
 		    res.removeChild(res.firstChild);
 		}
+		var dataInFrame = false; //variable to keep track of whether or not data is found within 
+		//the time frame of a day that has data in other time frames
 
 
         var detectionDatabase = firebase.database().ref('detected/'+selectedDate.year+'/'+
@@ -174,9 +176,10 @@ function ($scope, $stateParams, $ionicModal) {
 					for(var key in data){
 						var value = data[key];
 						var valueDate = new Date(value.timestamp);
+
 						//if current timestamp satisfies the range specified in the form
 						if (value.timestamp>= fDate.getTime() && value.timestamp<= tDate.getTime()){
-
+							dataInFrame = true;
 							//remove state number and dot separators from state result pulled from db
 							var stateText = value.result.split(".");
 							var state = "";
@@ -214,7 +217,8 @@ function ($scope, $stateParams, $ionicModal) {
 					}
 					
 				}
-				else {
+				if((data==null)||(dataInFrame==false)) {
+					var head = document.createElement("h5");
 					var result = document.createTextNode("No data for this time frame.");
 					head.appendChild(result);
 					res.appendChild(head);
