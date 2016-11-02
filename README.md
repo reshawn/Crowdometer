@@ -1,5 +1,8 @@
 # Crowdometer by TG
 
+https://www.youtube.com/watch?v=v43SYQHycKk&feature=youtu.be
+
+
 ## Server Requirements
 - Windows Server 2012 R2
 - Python
